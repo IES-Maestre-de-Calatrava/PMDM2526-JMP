@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">HolaAndroid</string>
+    <string name="msg_texto">Hola mundo</string>
+    <string name="etiqueta1">Nombre</string>
+
+    <string-array name="products">
+        <item> Aceite de oliva</item>
+        <item> Aceitunas </item>
+        <item> Aguacate </item>
+        <item> Ajo </item>
+        <item> Alcachofa </item>
+        <item> Amaranto </item>
+        <item> Apio </item>
+        <item> Arroz </item>
+        <item> Avena </item>
+    </string-array>
+</resources>

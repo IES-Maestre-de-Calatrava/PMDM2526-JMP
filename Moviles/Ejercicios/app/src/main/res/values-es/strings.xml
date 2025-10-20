@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HolaAndroid</string>
+    <string name="msg_texto">Hola mundo</string>
+    <string name="etiqueta1">Nombre</string>
+</resources>
