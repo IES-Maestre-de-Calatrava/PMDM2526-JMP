@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "es.maestre.holaandroid"
+    namespace = "es.maestre.mvvm"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "es.maestre.holaandroid"
+        applicationId = "es.maestre.mvvm"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -33,7 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
     buildFeatures{
         viewBinding = true
     }
@@ -49,5 +48,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.google.android.material:material:1.12.0")
 }
