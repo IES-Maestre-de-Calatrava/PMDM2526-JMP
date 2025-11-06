@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import es.maestre.sqlitemvvm.model.Peluche
 
+// CLASE ABSTRACTA QUE REPRESENTA LA BASE DE DATOS
 @Database(entities = [Peluche::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 

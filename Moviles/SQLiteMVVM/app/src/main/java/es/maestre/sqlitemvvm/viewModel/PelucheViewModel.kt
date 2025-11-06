@@ -9,6 +9,8 @@ import es.maestre.sqlitemvvm.conexion.AppDatabase
 import kotlinx.coroutines.launch
 import es.maestre.sqlitemvvm.model.Peluche
 
+// Actúa como intermediario entre el Modelo y la Vista, se encarga de recuperar/persistir
+// los datos y hacer los datos accesibles a la interfaz de usuario.
 class PelucheViewModel (application: Application) : AndroidViewModel(application)
 {
     private val repository: PelucheRepository

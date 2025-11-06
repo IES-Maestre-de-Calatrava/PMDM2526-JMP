@@ -8,6 +8,8 @@ import androidx.room.Query
 import androidx.room.Update
 import es.maestre.sqlitemvvm.model.Peluche
 
+// interfaz para definir las operaciones de base de datos usando el patrón DAO
+// AQUI HAY CONSULTAS: ESTAN EL INSERT, EL SELECTALL, EL SELECT BY ID, UPDATE Y DELETE
 @Dao
 interface  PelucheDAO {
     @Insert

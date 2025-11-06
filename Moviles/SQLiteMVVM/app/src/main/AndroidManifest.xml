@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteMVVM">
         <activity
+            android:name=".view.AddEditActivity" />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
