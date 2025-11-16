@@ -10,6 +10,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.LiveData
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import es.maestre.sqlitemvvm.R
 import es.maestre.sqlitemvvm.databinding.ActivityMainBinding
 import es.maestre.sqlitemvvm.model.Peluche
@@ -21,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     private var selected: Peluche? = null
     private val viewModel: PelucheViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: PelucheAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +38,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.topToolbar)
 
 
-        // Configurar el RecyclerView
-        val adapter = PelucheAdapter(emptyList()) { peluche ->
-            selected = peluche
-            Toast.makeText(this, "Seleccionado: ${peluche.nombre}", Toast.LENGTH_SHORT).show()
-        }
+        adapter = PelucheAdapter(viewModel.data, this)
 
         binding.rvPeluches.adapter = adapter
         binding.rvPeluches.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
-
 
         // Ajuste visual (esto está bien, lo dejamos)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -105,6 +105,19 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun initRecyclerView() {
+        val manager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvPeluches.layoutManager = manager
+
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.rvPeluches)
+
+        binding.rvPeluches.adapter = PelucheAdapter(viewModel.data, this)
+
+    }
+
+
+    /*
     // Actualiza la lista de peluches cuando se reanuda la actividad
     override fun onResume() {
         super.onResume()
@@ -112,4 +125,5 @@ class MainActivity : AppCompatActivity() {
             (binding.rvPeluches.adapter as PelucheAdapter).updateData(peluches)
         }
     }
+    */
 }

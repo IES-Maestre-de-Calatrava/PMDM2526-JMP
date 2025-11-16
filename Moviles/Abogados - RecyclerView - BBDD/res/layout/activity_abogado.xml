@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AbogadoActivity">
+
+    <TextView
+        android:id="@+id/labelNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/labelTelefono"
+        app:layout_constraintStart_toStartOf="@+id/labelTelefono"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/labelTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/labelEspecialidad"
+        app:layout_constraintStart_toStartOf="@+id/labelEspecialidad"
+        app:layout_constraintTop_toBottomOf="@+id/labelNombre"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/labelEspecialidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especialidad:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/labelBiografia"
+        app:layout_constraintStart_toStartOf="@+id/labelBiografia"
+        app:layout_constraintTop_toBottomOf="@+id/labelTelefono"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/labelBiografia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biografía"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelEspecialidad"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/labelNombre"
+        app:layout_constraintStart_toEndOf="@+id/labelNombre"
+        app:layout_constraintStart_toStartOf="@+id/telefono"
+        app:layout_constraintTop_toTopOf="@+id/labelNombre" />
+
+    <EditText
+        android:id="@+id/telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Telefono"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/labelTelefono"
+        app:layout_constraintStart_toEndOf="@+id/labelTelefono"
+        app:layout_constraintStart_toStartOf="@+id/especialidad"
+        app:layout_constraintTop_toTopOf="@+id/labelTelefono" />
+
+    <EditText
+        android:id="@+id/especialidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Especialidad"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/labelEspecialidad"
+        app:layout_constraintStart_toEndOf="@+id/labelTelefono"
+        app:layout_constraintStart_toStartOf="@+id/biografia"
+        app:layout_constraintTop_toTopOf="@+id/labelEspecialidad" />
+
+    <EditText
+        android:id="@+id/biografia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Biografia"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/labelBiografia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/labelEspecialidad"
+        app:layout_constraintTop_toTopOf="@+id/labelBiografia" />
+
+    <Button
+        android:id="@+id/btn_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/biografia" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package es.maestre.sqlitemvvm.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +30,11 @@ class AddEditActivity : AppCompatActivity() {
 
         binding = ActivityAddEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.buttonReturn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         // Recupero lo que el intent me lanzó
         mode = intent.getStringExtra("MODE")

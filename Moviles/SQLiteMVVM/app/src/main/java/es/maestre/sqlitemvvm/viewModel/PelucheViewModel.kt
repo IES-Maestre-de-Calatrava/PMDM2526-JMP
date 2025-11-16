@@ -25,7 +25,7 @@ class PelucheViewModel (application: Application) : AndroidViewModel(application
     }
 
 
-    private fun getAllPeluches(): LiveData<List<Peluche>>{
+    fun getAllPeluches(): LiveData<List<Peluche>>{
         return repository.getAllPeluches()
     }
 
